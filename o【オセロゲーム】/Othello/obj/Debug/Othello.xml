@@ -1,0 +1,142 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Othello
+</name>
+</assembly>
+<members>
+<member name="T:Othello.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Othello.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Othello.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:Othello.Cell.#ctor(Othello.ReverseGrid,System.Drawing.Point)">
+ <summary>論理位置を指定してセルを作成します。</summary>
+ <param name="Grid">セルが属するグリッドを指定します。</param>
+ <param name="Position">セルの論理位置を指定します。</param>
+</member>
+<member name="M:Othello.Cell.Draw(System.Drawing.Graphics)">
+ <summary>現在の状態を描画します。</summary>
+ <param name="g">描画対象のGraphicsオブジェクトを指定します。</param>
+</member>
+<member name="M:Othello.Cell.Focus">
+ <summary>セルをアクティブにします。</summary>
+ <remarks>アクティブなセルとはFocusedプロパティがTrueのセルです。
+ このメソッドを呼び出すと同じ盤に属するその他のセルのFocusedプロパティをFalseにします。
+ アクティブであることにそれ以上の効果はありませんが、
+ 描画の際にFocusedプロパティがTrueのセルに枠線を描画します。
+ </remarks>
+</member>
+<member name="T:Othello.CellStatus">
+ <summary>セルの状態を表します。</summary>
+</member>
+<member name="T:Othello.ScanDirection">
+ <summary>方向を表します。</summary>
+</member>
+<member name="M:Othello.Form1.PictureBox1_Click(System.Object,System.EventArgs)">
+ <summary>
+ 盤面をクリックしたときの処理
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
+<member name="M:Othello.Form1.PictureBox1_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
+ <summary>マウスの移動に伴ってセルにアクティブを示す枠を描画する</summary>
+</member>
+<member name="M:Othello.Form1.ChangeTurn">
+ <summary>ターン交代</summary>
+</member>
+<member name="M:Othello.Form1.Grid_PutNew(System.Object,System.EventArgs)">
+ <summary>石を置いたときに発生するイベント</summary>
+</member>
+<member name="M:Othello.Form1.Grid_Reversed(System.Object,System.EventArgs)">
+ <summary>石がひっくり返されたときに発生するイベント</summary>
+</member>
+<member name="M:Othello.Form1.Start(Othello.CellStatus)">
+ <summary>ゲームを開始します。</summary>
+ <param name="PlayerColor">人間の石の色を指定します。</param>
+ <remarks>黒が先手になります。</remarks>
+</member>
+<member name="M:Othello.ReverseGrid.#ctor">
+ <summary>全セルを初期化します。</summary>
+</member>
+<member name="P:Othello.ReverseGrid.Cells(System.Int32,System.Int32)">
+ <summary>セルを取得します。</summary>
+ <param name="X">セルの0から始まるX位置を指定します。Xの最大値はXCount-1です。</param>
+ <param name="Y">セルの0から始まるY位置を指定します。Yの最大値はYCount-1です。</param>
+ <returns>対象のセルを返します。</returns>
+</member>
+<member name="M:Othello.ReverseGrid.Draw(System.Drawing.Graphics)">
+ <summary>現在の状態を描画します。</summary>
+ <param name="g">描画対象のGraphicsオブジェクトを指定します。</param>
+</member>
+<member name="M:Othello.ReverseGrid.Initialize">
+ <summary>ゲームを最初の状態にします。</summary>
+</member>
+<member name="M:Othello.ReverseGrid.CellFromPoint(System.Int32,System.Int32)">
+ <summary>指定した座標にあるセルを取得します。</summary>
+ <param name="X">X座標を指定します。</param>
+ <param name="Y">Y座標を指定します。</param>
+ <returns>座標(X, Y)にあるセルを返します。該当するセルがない場合にはNothingを返します。</returns>
+</member>
+<member name="M:Othello.ReverseGrid.ReversibleCount(Othello.CellStatus,System.Int32,System.Int32)">
+ <summary>石をおいた場合にひっくり返せる石の数を調べます。</summary>
+ <param name="Status">置こうとしている石の状態を指定します。</param>
+ <param name="X">対象のセルの0から始まるX位置を指定します。Xの最大値はXCount-1です。</param>
+ <param name="Y">対象のセルの0から始まるY位置を指定します。Yの最大値はYCount-1です。</param>
+ <returns>石をおいた場合にひっくり返せる石の数を返します。</returns>
+</member>
+<member name="M:Othello.ReverseGrid.ReversibleCount(Othello.CellStatus,Othello.ScanDirection,System.Int32,System.Int32)">
+ <summary>石をおいた場合に特定の方向にひっくり返せる石の数を調べます。</summary>
+ <param name="Status">置こうとしている石の状態を指定します。</param>
+ <param name="Direction">ひっくり返す方向を指定します。</param>
+ <param name="X">対象のセルの0から始まるX位置を指定します。Xの最大値はXCount-1です。</param>
+ <param name="Y">対象のセルの0から始まるY位置を指定します。Yの最大値はYCount-1です。</param>
+ <returns>石をおいた場合にひっくり返せる石の数を返します。</returns>
+</member>
+<member name="M:Othello.ReverseGrid.CanPut(Othello.CellStatus,System.Int32,System.Int32)">
+ <summary>セルに石を置くことができるか調べます。</summary>
+ <param name="Status">置こうとしている石の状態を指定します。</param>
+ <param name="X">対象のセルの0から始まるX位置を指定します。Xの最大値はXCount-1です。</param>
+ <param name="Y">対象のセルの0から始まるY位置を指定します。Yの最大値はYCount-1です。</param>
+ <returns>セルに石が置ける場合はTrueを返します。</returns>
+</member>
+<member name="M:Othello.ReverseGrid.Reverse(Othello.CellStatus,Othello.ScanDirection,System.Int32,System.Int32)">
+ <summary>石をひっくり返します。</summary>
+ <param name="Status">ひっくり返す原因となった石の色を指定します。</param>
+ <param name="Direction">ひっくり返す方向を指定します。</param>
+ <param name="X">対象のセルの0から始まるX位置を指定します。Xの最大値はXCount-1です。</param>
+ <param name="Y">対象のセルの0から始まるY位置を指定します。Yの最大値はYCount-1です。</param>
+</member>
+<member name="M:Othello.ReverseGrid.Put(Othello.CellStatus,System.Int32,System.Int32)">
+ <summary>セルに石を置きます。</summary>
+ <param name="Status">置く石の状態を指定します。</param>
+ <param name="X">対象のセルの0から始まるX位置を指定します。Xの最大値はXCount-1です。</param>
+ <param name="Y">対象のセルの0から始まるY位置を指定します。Yの最大値はYCount-1です。</param>
+ <returns>石を置いた場合Trueを返します。置けなかった場合Falseを返します。</returns>
+ <remarks>このメソッドを呼び出すと周辺の石がひっくり返ります。</remarks>
+</member>
+<member name="P:Othello.ReverseGrid.Count(Othello.CellStatus)">
+ <summary>状態を指定してセルの数を取得します。</summary>
+ <param name="Status">数えるセルの状態を指定します。</param>
+ <returns>Statusで指定した状態であるセルの数を返します。</returns>
+</member>
+<member name="M:Othello.ReverseGrid.PuttableCount(Othello.CellStatus)">
+ <summary>置くことができる場所の数を調べます。</summary>
+ <param name="Status">調べる石の色を指定します。</param>
+ <returns>Statusで指定された色を置くことができる場所の数を返します。</returns>
+</member>
+</members>
+</doc>
