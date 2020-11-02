@@ -22,6 +22,7 @@ Partial Class Form1
     'コード エディターを使って変更しないでください。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -39,6 +40,7 @@ Partial Class Form1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.lblBlueCount = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
@@ -46,9 +48,10 @@ Partial Class Form1
         '
         Me.PictureBox1.Location = New System.Drawing.Point(13, 13)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(543, 483)
+        Me.PictureBox1.Size = New System.Drawing.Size(542, 491)
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = false
+        Me.PictureBox1.Visible = false
         '
         'Label1
         '
@@ -72,7 +75,7 @@ Partial Class Form1
         '
         'lblBlackTurn
         '
-        Me.lblBlackTurn.BackColor = System.Drawing.Color.Red
+        Me.lblBlackTurn.BackColor = System.Drawing.Color.Black
         Me.lblBlackTurn.Location = New System.Drawing.Point(576, 53)
         Me.lblBlackTurn.Name = "lblBlackTurn"
         Me.lblBlackTurn.Size = New System.Drawing.Size(109, 2)
@@ -91,7 +94,7 @@ Partial Class Form1
         '
         'lblWhiteTurn
         '
-        Me.lblWhiteTurn.BackColor = System.Drawing.Color.Red
+        Me.lblWhiteTurn.BackColor = System.Drawing.Color.White
         Me.lblWhiteTurn.Location = New System.Drawing.Point(576, 113)
         Me.lblWhiteTurn.Name = "lblWhiteTurn"
         Me.lblWhiteTurn.Size = New System.Drawing.Size(109, 2)
@@ -109,39 +112,43 @@ Partial Class Form1
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.SystemColors.AppWorkspace
         Me.Button1.Location = New System.Drawing.Point(578, 305)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 9
         Me.Button1.Text = "黒で開始"
-        Me.Button1.UseVisualStyleBackColor = true
+        Me.Button1.UseVisualStyleBackColor = false
         '
         'Button2
         '
+        Me.Button2.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Button2.Location = New System.Drawing.Point(578, 334)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(75, 23)
         Me.Button2.TabIndex = 10
         Me.Button2.Text = "白で開始"
-        Me.Button2.UseVisualStyleBackColor = true
+        Me.Button2.UseVisualStyleBackColor = false
         '
         'Button3
         '
+        Me.Button3.BackColor = System.Drawing.Color.LightCoral
         Me.Button3.Location = New System.Drawing.Point(578, 363)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(75, 23)
         Me.Button3.TabIndex = 11
         Me.Button3.Text = "赤で開始"
-        Me.Button3.UseVisualStyleBackColor = true
+        Me.Button3.UseVisualStyleBackColor = false
         '
         'Button4
         '
+        Me.Button4.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Button4.Location = New System.Drawing.Point(578, 392)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 12
         Me.Button4.Text = "青で開始"
-        Me.Button4.UseVisualStyleBackColor = true
+        Me.Button4.UseVisualStyleBackColor = false
         '
         'lblRedTurn
         '
@@ -153,7 +160,7 @@ Partial Class Form1
         '
         'lblBlueTurn
         '
-        Me.lblBlueTurn.BackColor = System.Drawing.Color.Red
+        Me.lblBlueTurn.BackColor = System.Drawing.Color.Blue
         Me.lblBlueTurn.Location = New System.Drawing.Point(576, 227)
         Me.lblBlueTurn.Name = "lblBlueTurn"
         Me.lblBlueTurn.Size = New System.Drawing.Size(109, 2)
@@ -199,11 +206,24 @@ Partial Class Form1
         Me.lblBlueCount.TabIndex = 18
         Me.lblBlueCount.Text = "0"
         '
+        'Label3
+        '
+        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label3.Font = New System.Drawing.Font("MS UI Gothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128,Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.MediumBlue
+        Me.Label3.Location = New System.Drawing.Point(54, 140)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(451, 217)
+        Me.Label3.TabIndex = 19
+        Me.Label3.Text = resources.GetString("Label3.Text")
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 12!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(711, 508)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.lblBlueCount)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -220,7 +240,7 @@ Partial Class Form1
         Me.Controls.Add(Me.lblBlackTurn)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.Label3)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
@@ -247,4 +267,5 @@ End Sub
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents lblBlueCount As Label
+    Friend WithEvents Label3 As Label
 End Class

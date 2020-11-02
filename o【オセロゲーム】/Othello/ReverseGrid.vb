@@ -85,7 +85,7 @@
             Cell.Status = CellStatus.Nothing
         Next
 
-        '初期配置
+        ''初期配置
         Cells(2, 2).Status = CellStatus.Red
         Cells(2, 3).Status = CellStatus.White
         Cells(2, 4).Status = CellStatus.Black
@@ -105,6 +105,27 @@
         Cells(5, 3).Status = CellStatus.Red
         Cells(5, 4).Status = CellStatus.Blue
         Cells(5, 5).Status = CellStatus.Black
+
+        ''テスト用
+        'Cells(2, 2).Status = CellStatus.Black
+        'Cells(2, 3).Status = CellStatus.White
+        'Cells(2, 4).Status = CellStatus.Black
+        'Cells(2, 5).Status = CellStatus.Blue
+
+        'Cells(3, 2).Status = CellStatus.Blue
+        'Cells(3, 3).Status = CellStatus.Black
+        'Cells(3, 4).Status = CellStatus.White
+        'Cells(3, 5).Status = CellStatus.Black
+
+        'Cells(4, 2).Status = CellStatus.Black
+        'Cells(4, 3).Status = CellStatus.Blue
+        'Cells(4, 4).Status = CellStatus.Black
+        'Cells(4, 5).Status = CellStatus.White
+
+        'Cells(5, 2).Status = CellStatus.White
+        'Cells(5, 3).Status = CellStatus.White
+        'Cells(5, 4).Status = CellStatus.Blue
+        'Cells(5, 5).Status = CellStatus.Black
 
         ''初期配置(テスト用)
         'For x = 2 To 5

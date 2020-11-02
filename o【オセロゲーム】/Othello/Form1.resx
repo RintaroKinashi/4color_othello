@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>４色オセロゲームです！
+
+コンピュータ３人に対して、
+どれだけ高得点で勝利できるか挑戦してみましょう！
+
+ーーーーーーーーーーーポイント計算法ーーーーーーーーーーーー
+①　勝利時点でのあなたが選んだ色の駒１つにつき１ポイント！
+②　空きマスを残して勝利したとき、空きマス１つにつき２ポイント
+③　あなたのターンで敵の残数を０にするごとに５ポイントを加算
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+70ポイント以上で神の領域！目指せ神！
+
+→　好きな色を選んでスタートです！　→</value>
+  </data>
 </root>

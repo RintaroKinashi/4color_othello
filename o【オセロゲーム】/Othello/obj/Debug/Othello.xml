@@ -45,6 +45,24 @@ Othello
 <member name="T:Othello.ScanDirection">
  <summary>方向を表します。</summary>
 </member>
+<member name="F:Othello.Form1.Computer1">
+ <summary>
+ CPの初期化
+ </summary>
+</member>
+<member name="P:Othello.Form1.Gekiha">
+ <summary>
+ 残機を０にした敵の数×５点を保持しておく関数
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:Othello.Form1.PictureBox1_Paint(System.Object,System.Windows.Forms.PaintEventArgs)">
+ <summary>
+ 描画処理
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+</member>
 <member name="M:Othello.Form1.PictureBox1_Click(System.Object,System.EventArgs)">
  <summary>
  盤面をクリックしたときの処理
@@ -55,14 +73,24 @@ Othello
 <member name="M:Othello.Form1.PictureBox1_MouseMove(System.Object,System.Windows.Forms.MouseEventArgs)">
  <summary>マウスの移動に伴ってセルにアクティブを示す枠を描画する</summary>
 </member>
-<member name="M:Othello.Form1.ChangeTurn">
- <summary>ターン交代</summary>
-</member>
 <member name="M:Othello.Form1.Grid_PutNew(System.Object,System.EventArgs)">
  <summary>石を置いたときに発生するイベント</summary>
 </member>
 <member name="M:Othello.Form1.Grid_Reversed(System.Object,System.EventArgs)">
  <summary>石がひっくり返されたときに発生するイベント</summary>
+</member>
+<member name="M:Othello.Form1.ChangeTurn">
+ <summary>ターン交代</summary>
+</member>
+<member name="M:Othello.Form1.Winner_Decision(Othello.CellStatus,Othello.CellStatus,Othello.CellStatus,Othello.CellStatus)">
+ <summary>
+ 勝者を返す関数
+ </summary>
+ <param name="Player"></param>
+ <param name="PC1"></param>
+ <param name="PC2"></param>
+ <param name="PC3"></param>
+ <returns></returns>
 </member>
 <member name="M:Othello.Form1.Start(Othello.CellStatus)">
  <summary>ゲームを開始します。</summary>
